@@ -40,31 +40,43 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.peers', {
+    url: '/peers',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-peers': {
+        templateUrl: 'templates/tab-peers.html',
+        controller: 'PeersCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.peer-detail', {
+    url: '/peers/:talkId',
+    views: {
+      'tab-peers': {
+        templateUrl: 'templates/peer-detail.html',
+        controller: 'PeerDetailCtrl'
+      }
+    }
+  })
+
+
+
+  .state('tab.talks', {
+      url: '/talks',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'tab-talks': {
+          templateUrl: 'templates/tab-talks.html',
+          controller: 'TalksCtrl'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+    .state('tab.talk-detail', {
+      url: '/talks/:talkId',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'tab-talks': {
+          templateUrl: 'templates/talk-detail.html',
+          controller: 'TalkDetailCtrl'
         }
       }
     })
@@ -80,6 +92,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/peers');
 
 });

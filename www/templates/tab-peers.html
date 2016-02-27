@@ -1,0 +1,11 @@
+<ion-view view-title="Peers">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="talk in talks" type="item-text-wrap" href="#/tab/peers/{{talk.id}}">
+        <img ng-src="{{talk.face}}">
+        <h2>{{talk.name}}</h2>
+        <p>{{talk.status}}</h2>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
